@@ -1,0 +1,24 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set Node.js version
+      uses: actions/setup-node@v1.1.0
+
+    - run: node --version
+    
+    - name: Install npm dependencies
+      run: npm ci
+
+    - name: Run Relay
+      run: npm run relay
+
+    - name: Run Build
+      run: npm run build
