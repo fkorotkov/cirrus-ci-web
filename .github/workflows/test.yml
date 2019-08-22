@@ -9,16 +9,15 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Set Node.js version
-      uses: actions/setup-node@v1.1.0
-
-    - run: node --version
     
     - name: Install npm dependencies
       run: npm ci
+      uses: uses: docker://node:latest
 
     - name: Run Relay
       run: npm run relay
+      uses: uses: docker://node:latest
 
     - name: Run Build
       run: npm run build
+      uses: uses: docker://node:latest
