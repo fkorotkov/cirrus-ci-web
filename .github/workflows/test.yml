@@ -12,12 +12,12 @@ jobs:
     
     - name: Install npm dependencies
       run: npm ci
-      uses: uses: docker://node:latest
+      uses: docker://node:latest
 
     - name: Run Relay
       run: npm run relay
-      uses: uses: docker://node:latest
+      uses: docker://node:latest
 
     - name: Run Build
       run: npm run build
-      uses: uses: docker://node:latest
+      uses: docker://node:latest
