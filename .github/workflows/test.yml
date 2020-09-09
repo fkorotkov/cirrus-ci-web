@@ -8,4 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - run: docker network inspect bridge
     - uses: cirruslabs/cirrus-action@master
