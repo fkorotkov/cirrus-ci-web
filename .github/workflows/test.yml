@@ -1,23 +1,11 @@
-name: CI
+  
+name: Run Cirrus Tasks
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  build:
-
+  cirrus:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v1
-    
-    - name: Install npm dependencies
-      run: npm ci
-      uses: docker://node:latest
-
-    - name: Run Relay
-      run: npm run relay
-      uses: docker://node:latest
-
-    - name: Run Build
-      run: npm run build
-      uses: docker://node:latest
+    - uses: actions/checkout@v2
+    - uses: cirruslabs/cirrus-action@master
